@@ -5,4 +5,5 @@ export const SavingsSchema = new mongoose.Schema({
   amount: Number,
   month: String,
   year: Number,
+  user: String,
 });

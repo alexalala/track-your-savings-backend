@@ -29,9 +29,9 @@ export class SavingsController {
   }
     
   // Fetch all accounts
-  @Get('accounts')
-  async getAccounts(@Res() res) {
-    const accounts = await this.savingsService.getAccounts();
+  @Get('accounts/:userID')
+  async getAccounts(@Res() res, @Param() userID) {
+    const accounts = await this.savingsService.getAccounts(userID.userID);
     return res.status(HttpStatus.OK).json(accounts);
   }
 

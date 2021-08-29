@@ -3,4 +3,5 @@ export class CreateAccountDTO {
   readonly amount: number;
   readonly month: string;
   readonly year: number;
+  readonly user: string;
 }

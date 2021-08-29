@@ -19,8 +19,8 @@ export class SavingsService {
     return account;
   }
     
-  async getAccounts(): Promise<Account[]> {
-    const accounts = await this.accountModel.find().exec();
+  async getAccounts(userID): Promise<Account[]> {
+    const accounts = await this.accountModel.find({ user: userID}).exec();
     return accounts;
   }
 
