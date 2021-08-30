@@ -6,7 +6,7 @@ import { SavingsModule } from './savings/savings.module';
 
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb://localhost/nest-savings-project', { useNewUrlParser: true }),
+    MongooseModule.forRoot((process.env.MONGODB_STORE_URI || 'mongodb://localhost/nest-savings-project')),
     SavingsModule,
   ],
   controllers: [AppController],
